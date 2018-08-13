@@ -1,0 +1,85 @@
+body {
+  padding-top: 90px;
+  line-height: normal;
+}
+
+.pyg_header .search_header {
+  width: 100%;
+  height: 45px;
+  padding: 5px 0 5px 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: yellowgreen;
+}
+
+.pyg_bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  font-size: 20px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.pyg_bar a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10px;
+  color: #007aff;
+}
+
+.pyg_view {
+  position: relative;
+  overflow: hidden;
+}
+
+.pyg_view .goods_info li {
+  margin: 5px;
+  background-color: #fff;
+}
+
+.pyg_view .goods_info li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pyg_view .goods_info li a .item_left {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.pyg_view .goods_info li a .item_left img {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.pyg_view .goods_info li a .item_right {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  overflow: hidden;
+}
+
+.pyg_view .goods_info li a .item_right .goods_name {
+  line-height: 0.4rem;
+  font-size: 0.16rem;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.pyg_view .goods_info li a .item_right .goods_price {
+  font-size: 0.14rem;
+  color: red;
+  padding-top: 0.2rem;
+}
+/*# sourceMappingURL=good_list.css.map */

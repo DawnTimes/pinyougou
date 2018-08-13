@@ -1,0 +1,67 @@
+.pyg_view .index_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pyg_view .index_nav a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 15px;
+}
+
+.pyg_view .index_nav a img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pyg_view .index_goodslist {
+  padding: 0px 10px;
+}
+
+.pyg_view .index_goodslist .goods_group .gg_title {
+  margin-bottom: 5px;
+}
+
+.pyg_view .index_goodslist .goods_group .gg_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pyg_view .index_goodslist .goods_group .gg_content li {
+  width: 49%;
+  padding: 5px 0;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.pyg_view .index_goodslist .goods_group .gg_content li .gc_info {
+  padding: 0 5px;
+  display: block;
+}
+
+.pyg_view .index_goodslist .goods_group .gg_content li .gc_info .goods_name {
+  height: 40px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #333;
+}
+
+.pyg_view .index_goodslist .goods_group .gg_content li .gc_info .goods_price {
+  font-size: 16px;
+  color: red;
+}
+
+.pyg_view .index_goodslist .goods_group .gg_content li .gc_link a {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=index.css.map */
