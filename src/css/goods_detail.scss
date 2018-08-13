@@ -1,0 +1,103 @@
+.pyg_view{
+    .goods_slider{}
+    .pyg_goods{
+        padding: 5px;
+        background-color: #fff;
+        .goods_name{
+            font-size: 16px;
+            color: #000;
+        }
+        .goods_price{
+            font-size: 20px;
+            color: orangered;
+        }
+        .goods_send{
+            margin-bottom: 10px;
+            li{
+                display: flex;
+                font-size: 14px;
+                
+                span:first-child{
+                    flex: 1;
+                    color: #bbb;
+                }
+                span:last-child{
+                    flex: 2;
+                    color: #666;
+                }
+            }
+        }
+        .goods_detail{
+            #item1{
+                *{
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+            }
+            #item2{
+                ul{
+                    li{
+                        padding: 10px;
+                        .detail_title{
+                            font-size: 18px;
+                            color: #666;
+                            font-weight: 800;
+                        }
+                        .detail_content{
+                            font-size: 14px;
+                            color: #999;
+                            display: flex;
+                            padding-top: 5px;
+                            span:nth-child(1){
+                                flex: 1;
+                            }
+                            span:nth-child(2){
+                                flex: 2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pyg_tools{
+    border-top: 1px solid #ccc;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    // align-items: center;
+    a{
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        height: 50px;
+        border-right: 1px solid #666;
+        
+    }
+    a:nth-child(-n+2){
+        display: flex;
+        flex-direction: column;
+        padding-top: 3px;
+    }
+
+    a:nth-child(3){
+        background-color: orange;
+        line-height: 50px;
+        border-right: 1px solid #fff;
+        color: #fff;
+    }
+    a:nth-child(4){
+        background-color: orangered;
+        line-height: 50px;
+        border-right: none;
+        color: #fff;
+    }
+}

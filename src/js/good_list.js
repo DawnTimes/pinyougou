@@ -4,7 +4,7 @@ $(function(){
     // search();
     var QueryObj = {
         query:"",
-        cid: getValue("cid"),
+        cid: $.getUrlValue("cid"),
         pagenum:1,
         pagesize:6
     }
@@ -16,6 +16,8 @@ $(function(){
 
     init();
     function init(){
+        eventLink();
+
         mui.init({
             pullRefresh : {
               container:".pyg_view",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
@@ -92,13 +94,7 @@ $(function(){
     }
 
 
-    // 根据url上的key来获取值
-    function getValue(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return decodeURI(r[2]);
-        return null;
-    }
+
 
     function search(callback){
         $.get("goods/search",QueryObj,function(res){
@@ -115,6 +111,18 @@ $(function(){
             $(".goods_info").append(html);
 
             callback && callback();
+        })
+    }
+
+    //MUI插件阻止了a标签的默认行为，需要用js手动设置跳转链接
+    function eventLink(){
+        //需用委托的方式注册事件
+        $(".pyg_view").on("tap","a",function(){
+            //获取a标签上的url
+            var href = this.href;
+            console.log(href);
+            //跳转页面
+            location.href = href;
         })
     }
 })

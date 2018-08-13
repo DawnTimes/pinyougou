@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>注册</title>
+
+    <link rel="stylesheet" href="/lib/mui/css/mui.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/register.css">
+
+</head>
+
+<body>
+    <header id="header" class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">注册</h1>
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    </header>
+    <div class="pyg_view">
+        <div class="register_form">
+            <form class="mui-input-group">
+                <div class="mui-input-row">
+                    <label>手机</label>
+                <input type="text" name="mobile" value="13288889999" class="mui-input-clear" placeholder="请输入手机">
+                </div>
+                <div class="mui-input-row code_row">
+                    <label>验证码</label>
+                <input type="text" name="code"  placeholder="4位验证码">
+                <button type="button" id="code_btn" class="mui-btn mui-btn-primary">获取验证码</button>
+                </div>
+                <div class="mui-input-row">
+                    <label>邮箱</label>
+                <input type="text" name="email" value="123@456.com" class="mui-input-clear" placeholder="请输入邮箱">
+                </div>
+                
+                <div class="mui-input-row">
+                    <label>密码</label>
+                    <input type="password" name="pwd" class="mui-input-password" placeholder="请输入密码">
+                </div>
+                <div class="mui-input-row">
+                    <label>确认密码</label>
+                    <input type="password" name="pwd2" class="mui-input-password" placeholder="请输入密码">
+                </div>
+                <div class="mui-input-row mui-radio ">
+                    <label>男</label>
+                    <input name="gender" type="radio" value="男">
+                </div> 
+                <div class="mui-input-row mui-radio ">
+                    <label>女</label>
+                    <input name="gender" type="radio" checked value="女">
+                </div> 
+                <div class="mui-button-row tools_btn">
+                    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">返回</button>
+                    <button type="button" id="reg_btn" class="mui-btn mui-btn-primary">注册</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<footer class="pyg_footer">
+    <a href="/index.html">
+        <span class="fa fa-home"></span>
+        <div class="page_name">首页</div>
+    </a>
+    <a href="javasscript:;">
+        <span class="fa fa-list-ul"></span>
+        <div class="page_name">分类</div>
+    </a>
+    <a href="javasscript:;">
+        <span class="fa fa-shopping-cart"></span>
+        <div class="page_name">购物车</div>
+    </a>
+    <a href="javasscript:;">
+        <span class="fa fa-user-circle-o"></span>
+        <div class="page_name">我的</div>
+    </a>
+</footer>
+
+
+
+
+
+<script src="/lib/mui/js/mui.js"></script>
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="/lib/zepto/zepto.js"></script>
+<script src="/lib/iscroll/iscroll.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/register.js"></script>
+
+</html>

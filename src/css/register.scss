@@ -1,0 +1,24 @@
+.pyg_view{
+   
+    .register_form{
+        padding: 10px;
+        .code_row{
+            position: relative;
+            #code_btn{
+                position: absolute;
+                right: 0;
+                top: 0;
+                //初始化按钮的宽度
+                width: auto;
+                padding: 10px 8px;
+            }
+        }
+        .tools_btn{
+            display: flex;
+            padding-top: 10px;
+            .mui-btn{
+                flex: 1;
+            }
+        } 
+    }
+}

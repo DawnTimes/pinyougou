@@ -42,4 +42,33 @@ $(function(){
             $("body").removeClass("wait");
         }
     }
+
+
+    // 拓展zepto-> 给$对象添加自定义的属性或者方法,可以全局调用
+    $.extend($,{
+        // 根据url上的key来获取值
+        getUrlValue:function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return null;
+        },
+        //验证手机号码合法性
+        checkPhone: function (phone) {
+            if (!(/^1[34578]\d{9}$/.test(phone))) {
+              return false;
+            } else {
+              return true;
+            }
+          },
+          //验证邮箱的合法性
+          checkEmail:function (myemail) {　　
+            var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+            if (myReg.test(myemail)) {　　　　
+                return true;　　
+            } else {　　　　
+                return false;
+            }
+        }
+    })
 })

@@ -1,0 +1,29 @@
+.pyg_view .register_form {
+  padding: 10px;
+}
+
+.pyg_view .register_form .code_row {
+  position: relative;
+}
+
+.pyg_view .register_form .code_row #code_btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  padding: 10px 8px;
+}
+
+.pyg_view .register_form .tools_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 10px;
+}
+
+.pyg_view .register_form .tools_btn .mui-btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+/*# sourceMappingURL=register.css.map */
