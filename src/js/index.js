@@ -38,7 +38,7 @@ $(function(){
     function getGoodsLit(){
         $.get("home/goodslist",function(res){
             // console.log(res);
-            // console.log(res.data);
+            console.log(res.data);
 
             var html = template("tempGoddsList",{data:res.data});
             $(".index_goodslist").html(html);

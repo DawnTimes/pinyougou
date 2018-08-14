@@ -32,10 +32,26 @@ $(function(){
             if(res.meta.status == 200){
                 //提示登录成功
                 mui.toast(res.meta.msg);
-                //登录成功，跳转页面
+
+                //把用户信息存储到永久存储中,需先转为JSON字符串格式
+                localStorage.setItem("userinfo",JSON.stringify(res.data));
+
+                //获取会话存储中的保存的页面地址
+                var pageName = sessionStorage.getItem("pageName");
+                // console.log(pageName);
+
                 setTimeout(function(){
-                    location.href = "/index.html";
+                    //判断有没有页面来源
+                    if(pageName){
+                        //有，则跳转到该页面地址
+                        location.href = pageName;
+                    }else{
+                        //没有，则跳转到首页
+                        location.href = "/index.html";
+                    }
                 },1000)
+                // debugger;
+                
             }else{
                 //提示登录失败
                 mui.toast(res.meta.msg);

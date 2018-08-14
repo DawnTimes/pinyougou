@@ -35,7 +35,7 @@ $(function(){
     //请求返回来之后
     $.ajaxSettings.complete = function(){
         //如：发送3个请求，需要等3个请求全部回来了，再隐藏
-        console.log('请求回来了');
+        // console.log('请求回来了');
         ajaxNums--;
         if(ajaxNums == 0){
             //最后一个请求回来了

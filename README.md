@@ -135,6 +135,26 @@ mui('.lt_view').pullRefresh().refresh(true);
   }
 ```
 
+### 设请求回来后
+
+`complete` 会在请求回来之后被调用
+
+
+
+```javascript
+var ajaxNums = 0;//发送请求的次数
+$.ajaxSettings.complete = function(){
+	ajaxNums--;
+     if(ajaxNums == 0){
+     //最后一个请求回来了
+	$("body").removeClass("wait");
+     }
+}
+
+```
+
+
+
 ### 扩展zepto
 
 ​	为**$**对象增加自定义方法 如 可以这样使用 `$.show();`

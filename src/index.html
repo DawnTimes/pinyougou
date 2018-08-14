@@ -47,24 +47,7 @@
 
     <!-- 商品列表 -->
     <div class="index_goodslist">
-        <!-- <div class="goods_group">
-            <div class="gg_title">
-                <img src="http://image4.suning.cn/uimg/cms/img/149559219946350066.png" alt="">
-                
-            </div>
-            <ul class="gg_content">
-                <li>
-                    <a href="" class="gc_info">
-                        <img src="http://image2.suning.cn/uimg/b2c/newcatentries/0000000000-000000000683551622_1_400x400.jpg" alt="">
-                        <div class="goods_name">物有物语 数字筹码麻将专用160片 筹码币</div>
-                        <div class="goods_price">￥399</div>
-                    </a>
-                    <div href="" class="gc_link">
-                        <a href="" class="mui-btn mui-btn-primary mui-btn-outlined">找相似</a>
-                    </div>
-                </li>
-            </ul>
-        </div> -->
+        
     </div>
 </div>
 <footer class="pyg_footer">
@@ -133,7 +116,7 @@
             <ul class="gg_content">
                 {{each value.goods val index2}}
                 <li>
-                    <a href="" class="gc_info">
+                    <a href="/pages/goods_detail.html?goods_id={{val.goods_id}}" class="gc_info">
                         <img src="{{val.goods_small_logo}}" alt="">
                         <div class="goods_name">{{val.goods_name}}</div>
                         <div class="goods_price">￥{{val.goods_price}}</div>
