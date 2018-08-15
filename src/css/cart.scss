@@ -1,0 +1,139 @@
+@mixin ellipsis($n) {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: $n;
+    -webkit-box-orient: vertical;
+}
+
+body{
+    display: none;
+}
+
+#header{
+    #delete_btn{
+        display: none;
+    }
+    #edit_btn{
+        
+    }
+}
+
+.pyg_view{
+    padding: 10px;
+    // 配送地址
+    .pyg_adress{
+        margin: 30px 0;
+        .adress_title{
+            font-size: 14px;
+            color: #666;
+        }
+        .adress_content{
+            background-color: #fff;
+            display: flex;
+            padding: 10px 0;
+            .icon{
+                flex: 2;
+                align-self: center;
+                text-align: center;
+                font-size: 24px;
+            }
+            .adress_detail{
+                flex: 8;
+                .ad_start{
+                    font-size: 15px;
+                }
+                .ad_info{
+                    font-size: 14px;
+                    color: #888;
+                }
+            }
+        }
+    }
+
+    //订单总额
+    .pyg_order{
+        .order_title{
+            font-size: 14px;
+            color: #666;
+        }
+        .order_content{
+            font-size: 15px;
+            background-color: #fff;
+            display: flex;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            .total_pirce{}
+            .creat_order{
+                color: red;
+            }
+        }
+    }
+
+    //购物车
+    .pyg_cart{
+        margin: 30px 0;
+        .cart_title{}
+        .cart_content{
+            ul{
+                background-color: #fff;
+                li{
+                    display: flex;
+                    padding: 10px 0;
+                    border-top: 1px solid #ccc; 
+                    .goods_checkbox{
+                        flex: 1;
+                        // display: flex;
+                        display: none;
+                        align-items: center;
+                        justify-content: center;
+                        input{
+                            position: static;
+                        }
+                    }
+                    .goods_img{
+                        flex: 1;
+                        // margin: 0 auto;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .goods_info{
+                        flex: 3;
+                        padding-left: 10px;
+                        .text{
+                            font-size: 14px;
+                            color: #666;
+                            @include ellipsis(2);
+                        }
+                        .goods_nums{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding-top: 10px;
+                            .goods_pirce{}
+                            .mui-numbox{
+                                display: none; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#pyg_body.edit_status{
+    #delete_btn{
+        display: block;
+    }
+    .goods_checkbox{
+        display: flex;
+    }
+    .mui-numbox{
+        display: block;
+    }
+}

@@ -51,7 +51,9 @@ $(function(){
             // })
 
             // 判断永久存储中有没有userinfo
-            if(!localStorage.getItem("userinfo")){
+            // if(!localStorage.getItem("userinfo")){
+                //封装好的方法
+            if(!$.checkLogin()){
                 // 没有用户信息 肯定未登录过
                 mui.toast("未登录");
                 sessionStorage.setItem("pageName", location.href);
@@ -68,7 +70,9 @@ $(function(){
             2.token 登录验证使用，放置在请求头中 发送到后台
             */
 
-           var token = JSON.parse(localStorage.getItem("userinfo")).token;
+        //    var token = JSON.parse(localStorage.getItem("userinfo")).token;
+        //封装好的方法
+           var token = $.token();
           //  console.log(token);
 
             var obj = {

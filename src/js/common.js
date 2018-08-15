@@ -61,14 +61,30 @@ $(function(){
               return true;
             }
           },
-          //验证邮箱的合法性
-          checkEmail:function (myemail) {　　
+        //验证邮箱的合法性
+        checkEmail:function (myemail) {　　
             var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
             if (myReg.test(myemail)) {　　　　
                 return true;　　
             } else {　　　　
                 return false;
             }
+        },
+
+        //判断永久存储中有没有userinfo
+        checkLogin: function(){
+            return localStorage.getItem("userinfo");
+        },
+
+        token: function(){
+            //如果userinfo存在 则返回token 否则就返回 ""
+            var token;
+            if(!localStorage.getItem("userinfo")){
+                token = "";
+            }else {
+                token = JSON.parse(localStorage.getItem("userinfo")).token;
+            }
+            return token;
         }
     })
 })
