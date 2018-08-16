@@ -59,8 +59,8 @@ $(function(){
                 sessionStorage.setItem("pageName", location.href);
                 setTimeout(function () {
                   location.href = "/pages/login.html";
-                }, 1000);
-                return; 
+                  return; 
+                },1000);
             }
             // debugger;
 
@@ -100,8 +100,8 @@ $(function(){
                     if(res.meta.status == 401){
                         mui.toast("未登录");
     
-                        //把当前页面地址存储到会话存储中
-                        sessionStorage.setItem("pageName",location.href);
+                        //把当前页面地址存储到会话存储中,已封装
+                        $.setPage();
                         // debugger;
                         //跳转到登录页面
                         setTimeout(function(){

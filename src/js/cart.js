@@ -4,8 +4,9 @@ $(function(){
 
         //判断是否已经登录
         if(!$.checkLogin()){
+            //把当前页面地址存放到 会话地址 中
+            $.setPage();
             //重新跳转到登录页面
-            sessionStorage.setItem("pageName",location.href);
             location.href = "/pages/login.html";
             return;
         }else{
@@ -30,7 +31,7 @@ $(function(){
             },
             success: function(res){
                 // console.log(res);
-                //判断token是否有效
+                
                 if(res.meta.status == 200){
                     var cart_info = JSON.parse(res.data.cart_info);
                     console.log(cart_info);
@@ -68,7 +69,93 @@ $(function(){
                 $("#edit_btn").text("完成");
             }else{
                 $("#edit_btn").text("编辑");
+
+                /* 
+                1.判断有没有商品
+                2.获取所有的li标签
+                3.循环li标签
+                    1 获取li身上的obj
+                    2 改变 obj 里面的obj.amount(要购买的数量) = 所在li标签的里面的input标签的值
+                    3 再去构造请求的参数 info:{}
+                */
+               var lis = $(".cart_content li");
+               //判断有没有商品
+               if(lis.length == 0){
+                   mui.toast("您还没有购买的商品");
+                   return;
+               }
+
+               //需要发送后台的 info 对象
+               var infos = {};
+               for (var i = 0; i < lis.length; i++) {
+                    var li = lis[i];
+                    //商品的对象
+                    var obj = $(li).data("obj");
+                    //获取购买的商品的数量,并赋值给obj.amount
+                    obj.amount = $(li).find(".mui-numbox-input").val();
+                    infos[obj.goods_id] = obj;
+               }
+
+               //同步数据
+               syncCart(infos);
             }
+        })
+
+
+        //点击删除
+        $("#delete_btn").on("tap",function(){
+            /* 
+            1.获取已选中的复选框的个数
+                如果长度为0，则没有选中的
+            2.如果有选中的，则弹出提示框  提示用户是否删除
+            3.确定 删除  接口-同步购物车，获取数据
+                方式1. 如 有5个商品，选中1个，则发送被选中的商品的id到后台
+                方式2. 如有5个商品，选中1个，发送未选中的那4个商品带后台
+            4.根据文档要求 用方式2 
+                获取未删除的li标签，构造函数 方式请求
+            5.方式请求
+                删除失败 弹出提示信息
+                删除成功 重新发送请求 渲染页面
+            */
+
+            //获取被选中的复选框
+            var checkeds = $(".cart_content input[name='g_ckb']:checked");
+            // console.log(checkeds);
+            //如果长度为0 提示：没有选中任何商品
+            if(checkeds.length == 0){
+                mui.toast("还没有选中任何商品");
+                return;
+            }
+
+            //有选中的 弹出提示  确定 或 取消
+            mui.confirm("确定要删除吗？","警告",["确定", "取消"],function(etype){
+                //确定
+                if(etype.index == 0){
+                    //获取未被选中的复选框的父元素 li 标签
+                    var unCheckedList = $(".cart_content input[name='g_ckb']").not(":checked").parents("li");
+                    console.log(unCheckedList);
+
+                    //被删除的对象字段
+                    var infos = {};
+                    for (var i = 0; i < unCheckedList.length; i++) {
+                        var li = unCheckedList[i];
+                        // var obj = li.dataset.obj;
+                        var obj = $(li).data("obj");
+                        console.log(obj);
+                        infos[obj.goods_id] = obj;
+                    }
+                    console.log(infos);
+
+                    // console.log($.token());
+
+                    //发送请求删除数据
+                    syncCart(infos);
+
+                } else if(etype.index == 1){
+                    //取消
+                    console.log('取消');
+                }
+            })
         })
     }
 
@@ -101,5 +188,33 @@ $(function(){
         //赋值
         $(".total_pirce .pirce").text(total);
         
+    }
+
+
+    //同步数据
+    function syncCart(infos){
+        //发送请求删除数据
+        $.ajax({
+            url:"my/cart/sync",
+            type:"post",
+            data:{
+                infos:JSON.stringify(infos)
+            },
+            headers: {
+                Authorization: $.token()
+            },
+            success: function(res){
+                console.log(res);
+                //成功
+                if(res.meta.status == 200){
+                    mui.toast(res.meta.msg);
+                    //重新渲染数据
+                    getCartData();
+                }else{
+                    //失败
+                    mui.toast(res.meta.msg);
+                }
+            }
+        })
     }
 })

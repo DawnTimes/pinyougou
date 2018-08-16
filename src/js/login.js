@@ -34,7 +34,7 @@ $(function(){
                 mui.toast(res.meta.msg);
 
                 //把用户信息存储到永久存储中,需先转为JSON字符串格式
-                localStorage.setItem("userinfo",JSON.stringify(res.data));
+                $.setUser(res.data);
 
                 //获取会话存储中的保存的页面地址
                 var pageName = sessionStorage.getItem("pageName");
