@@ -1,0 +1,40 @@
+body {
+  display: none;
+}
+
+.pyg_view .pyg_buy #segmentedControl {
+  background-color: #fff;
+}
+
+.pyg_view .pyg_buy .order_info {
+  padding: 10px;
+}
+
+.pyg_view .pyg_buy .order_info .mui-control-content ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.pyg_view .pyg_buy .order_info .mui-control-content ul li .order_num {
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.pyg_view .pyg_buy .order_info .mui-control-content ul li .tt_price {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  padding-left: 15px;
+  color: red;
+}
+/*# sourceMappingURL=orders.css.map */

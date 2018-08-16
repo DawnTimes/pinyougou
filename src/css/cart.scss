@@ -76,7 +76,10 @@ body{
     //购物车
     .pyg_cart{
         margin: 30px 0;
-        .cart_title{}
+        .cart_title{
+            font-size: 14px;
+            color: #666;
+        }
         .cart_content{
             ul{
                 background-color: #fff;

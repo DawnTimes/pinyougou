@@ -157,6 +157,47 @@ $(function(){
                 }
             })
         })
+
+        //生成订单
+        $(".creat_order").on("tap",function(){
+            //1.判断有没有数据
+            //2.构造请求的参数
+            var lis = $(".cart_content li");
+            //判断有没有商品 长度 0 没有
+            if(lis.length == 0){
+                mui.toast("您还没有购买的商品");
+                return;
+            }
+
+            //要发送的参数
+            var paramsObj = {
+                //总价
+                order_price: $(".total_pirce .pirce").text(),
+                //地址
+                consignee_addr: "广州天河区吉山",
+                //购买的商品列表
+                goods:[]
+            }
+
+            for (var i = 0; i < lis.length; i++) {
+                var li = lis[i];
+                var obj = $(li).data("obj");
+                var tem = {
+                    goods_id:obj.goods_id,
+                    //数量
+                    goods_number:$(li).find(".mui-numbox-input").val(),
+                    //单价
+                    goods_price:obj.goods_price
+                }
+
+                //依次添加入数组中
+                paramsObj.goods.push(tem);
+            }
+            console.log(paramsObj);
+
+            //发送数据
+            orderCreate(paramsObj);
+        })
     }
 
     //计算总价格
@@ -213,6 +254,31 @@ $(function(){
                 }else{
                     //失败
                     mui.toast(res.meta.msg);
+                }
+            }
+        })
+    }
+
+    //生成订单
+    function orderCreate(params){
+        $.ajax({
+            url:"my/orders/create",
+            type:"post",
+            data:params,
+            headers: {
+                Authorization: $.token()
+            },
+            success:function(res){
+                console.log(res);
+                //成功
+                if(res.meta.status == 200){
+                    mui.toast(res.meta.msg);
+                    //跳转页面
+                    setTimeout(function(){
+                        location.href = "/pages/orders.html";
+                    },1000)
+                }else{
+                    mui.toast(res.meta.status);
                 }
             }
         })

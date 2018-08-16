@@ -79,6 +79,11 @@ body {
   margin: 30px 0;
 }
 
+.pyg_view .pyg_cart .cart_title {
+  font-size: 14px;
+  color: #666;
+}
+
 .pyg_view .pyg_cart .cart_content ul {
   background-color: #fff;
 }

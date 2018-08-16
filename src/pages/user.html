@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>个人中心</title>
+
+    <link rel="stylesheet" href="/lib/mui/css/mui.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/user.css">
+
+</head>
+
+<body>
+    <header id="header" class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">个人中心</h1>
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    </header>
+    <div class="pyg_view">
+        <!-- 用户信息 -->
+        <div class="pyg_userinfo">
+            
+        </div>
+
+        <!-- 订单管理 -->
+        <div class="order_manage">
+            <div class="order_title">订单管理</div>
+            <div class="order_content">
+                <a href="javascript:;">
+                    <span class="fa fa-credit-card"></span>
+                    <div class="text">待付款</div>
+                </a>
+                <a href="javascript:;">
+                    <span class="fa fa-calendar-check-o"></span>
+                    <div class="text">待收货</div>
+                </a>
+                <a href="javascript:;">
+                    <span class="fa fa-shopping-cart"></span>
+                    <div class="text">退款/售后</div>
+                </a>
+                <a href="javascript:;">
+                    <span class="fa fa-user-circle-o"></span>
+                    <div class="text">全部订单</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 密码 -->
+        <div class="pyg_pwd">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell"><a href="javascript:;">修改登录密码</a></li>
+                <li class="mui-table-view-cell"><a href="javascript:;">支付密码管理</a></li>
+                <li class="mui-table-view-cell"><a href="javascript:;">收货地址管理</a></li>
+            </ul>
+        </div>
+
+        <!-- 客服 -->
+        <div class="pyg_contack">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell"><a href="javascript:;">联系客服</a></li>
+                <li class="mui-table-view-cell"><a href="javascript:;">意见反馈</a></li>
+                <li class="mui-table-view-cell"><a href="javascript:;">关于我们</a></li>
+            </ul>
+        </div>
+
+        <!-- 退出登录 -->
+        <div class="login_out">
+            <button id="loginOutBtn" type="button" data-loading-icon="mui-spinner mui-spinner-custom" class="mui-btn mui-btn-danger">退出登录</button>
+        </div>
+    </div>
+
+
+<footer class="pyg_footer">
+    <a href="/index.html">
+        <span class="fa fa-home"></span>
+        <div class="page_name">首页</div>
+    </a>
+    <a href="/pages/category.html">
+        <span class="fa fa-list-ul"></span>
+        <div class="page_name">分类</div>
+    </a>
+    <a href="/pages/cart.html">
+        <span class="fa fa-shopping-cart"></span>
+        <div class="page_name">购物车</div>
+    </a>
+    <a href="javasscript:;">
+        <span class="fa fa-user-circle-o"></span>
+        <div class="page_name">我的</div>
+    </a>
+</footer>
+
+</body>
+
+<script type="text/html" id="tmpUserInfo">
+    <a href="javacript:;">
+        <div class="left">
+            <span class="mui-icon mui-icon-contact mui-media-object mui-pull-left"></span>
+        </div>
+        <div class="right">
+            <div class="phone">{{data.username}}</div>
+            <div class="email">{{data.user_email}}</div>
+        </div>
+    </a>
+</script>
+
+
+<script src="/lib/mui/js/mui.js"></script>
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="/lib/zepto/zepto.js"></script>
+<script src="/lib/iscroll/iscroll.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/user.js"></script>
+
+</html>

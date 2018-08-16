@@ -1,0 +1,41 @@
+@mixin ellipsis($n) {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: $n;
+    -webkit-box-orient: vertical;
+}
+
+body{
+    display: none;
+}
+.pyg_view{
+    .pyg_buy{
+        #segmentedControl{
+            background-color: #fff;
+        }
+
+        .order_info{
+            padding: 10px;
+            .mui-control-content{
+                ul{
+                    li{
+                        display: flex;
+                        overflow: hidden;
+                        .order_num{
+                            flex: 7;
+                            @include ellipsis(1);
+                        }
+                        .tt_price{
+                            flex: 3;
+                            padding-left: 15px;
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
