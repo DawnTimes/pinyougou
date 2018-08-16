@@ -103,7 +103,7 @@
     <li data-obj="{{value}}">
         <div class="goods_checkbox">
             <div class="mui-input-row mui-checkbox">
-                <input name="checkbox1" value="Item 1" type="checkbox" checked>
+                <input name="g_ckb"  type="checkbox" >
             </div>
         </div>
         <div class="goods_img">
@@ -116,7 +116,7 @@
                 <div class="mui-numbox" data-numbox-min='1' data-numbox-max='{{value.goods_number}}' data-numbox-step='1'>
                     <!-- "-"按钮，点击可减小当前数值 -->
                     <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
-                    <input class="mui-numbox-input" type="number" />
+                    <input class="mui-numbox-input" type="number" value="{{value.amount}}" />
                     <!-- "+"按钮，点击可增大当前数值 -->
                     <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
                 </div>

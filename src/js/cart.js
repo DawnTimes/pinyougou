@@ -39,7 +39,7 @@ $(function(){
                     $(".pyg_cart ul").html(html);
 
                     //初始化数字输入框，需在元素动态生成之后初始化才有用
-                    mui(".pyg_cart").numbox();
+                    mui(".mui-numbox").numbox();
 
                     //计算总价格
                     countAll();
